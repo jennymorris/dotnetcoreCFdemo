@@ -1,0 +1,120 @@
+﻿
+@model PivotalCF.Models.RootObject
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="sfContentBlock">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+            <h2 class="h1 center">All Attendees</h2>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table" style="width:100%">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip Code</th>
+                    <th>Phone</th>
+                    <th>Email Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">
+                        <a href="javascript:void(0);"><img src="https://workshop-tottering-dolichocephaly.cfapps.pez.pivotal.io/img/delete.jpeg" style="width: auto; height: 20px;" /></a>
+                    </th>
+                    <td>John</td>
+                    <td>Smith</td>
+                    <td>123 Main St</td>
+                    <td>Akron</td>
+                    <td>OH</td>
+                    <td>44321</td>
+                    <td>330-123-4567</td>
+                    <td>jsmith@gopivotal.com</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <a href="javascript:void(0);"><img src="https://workshop-tottering-dolichocephaly.cfapps.pez.pivotal.io/img/delete.jpeg" style="width: auto; height: 20px;" /></a>
+                    </th>
+                    <td>Sally</td>
+                    <td>Struthers</td>
+                    <td>321 Oak St</td>
+                    <td>Akron</td>
+                    <td>OH</td>
+                    <td>44321</td>
+                    <td>614-123-4567</td>
+                    <td>sstruthers@gopivotal.com</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <a href="javascript:void(0);"><img src="https://workshop-tottering-dolichocephaly.cfapps.pez.pivotal.io/img/delete.jpeg" style="width: auto; height: 20px;" /></a>
+                    </th>
+                    <td>Jane</td>
+                    <td>doe</td>
+                    <td>4444 High St</td>
+                    <td>Akron</td>
+                    <td>OH</td>
+                    <td>44321</td>
+                    <td>220-123-4567</td>
+                    <td>jdoe@gopivotal.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+            <h2 class="h1 center">Environment Information</h2>
+        </div>
+    </div>
+    @if (Model != null)
+    {
+        <div class="row">
+            <table class="table" style="width:100%">
+                <tbody>
+                    <tr>
+                        <th scope="row" style="width: 20%;">The current server time is </th>
+                        <td>@DateTime.Now</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">The application port is</th>
+                        <td>@Model.PORT</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">The instance ID is</th>
+                        <td>@Model.instance_id</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">The instance index is</th>
+                        <td>@Model.instance_index</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">The version is</th>
+                        <td>@Model.version</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">The instance was started at</th>
+                        <td>@Model.start</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    }
+    <div style="clear:both;">&nbsp;</div>
+    <div class="row">
+        <div class="cta empty" style="float: left; margin-right: 20px;">
+            <a href="@Url.Action("Reload","Home")" class="btn btn-orange">Reload</a>
+        </div>
+        <div class="cta empty">
+            <a href="@Url.Action("Kill","Home")" class="btn btn-orange">Kill</a>
+        </div>
+    </div>
+
+</div>

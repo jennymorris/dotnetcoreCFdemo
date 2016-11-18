@@ -1,0 +1,28 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "https://csidemo.cfapps.pez.pivotal.io",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "https://csidemo.cfapps.pez.pivotal.io",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "PivotalCF": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "https://csidemo.cfapps.pez.pivotal.io",
+      "environmentVariables": {
+        "Hosting:Environment": "Production"
+      }
+    }
+  }
+}
